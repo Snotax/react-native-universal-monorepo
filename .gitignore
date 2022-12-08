@@ -9,3 +9,7 @@ node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+local.properties
+.yarn/cache/*
+install-state.gz
+Podfile.lock
