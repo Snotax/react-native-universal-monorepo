@@ -10,6 +10,11 @@ module.exports = {
       monorepoWebpackTools.enableWorkspacesResolution(webpackConfig);
       // Ensure nohoisted libraries are resolved from this workspace.
       monorepoWebpackTools.addNohoistAliases(webpackConfig);
+
+      webpackConfig.resolve.plugins = webpackConfig.resolve.plugins.filter(
+        (plugin) => plugin.constructor.name !== "ModuleScopePlugin"
+      );
+      
       return webpackConfig;
     },
     plugins: [
